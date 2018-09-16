@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Graphene Modal v1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0">
+</head>
+
+<body>
+    <!-- Optional page class and wrapper just for example page styles -->
+    <div class="graphene--example-page--wrapper">
+
+
+        <h1>Graphene Modal</h1>
+        <h3>A simple, lightweight modal / modal window. Built for performance.</h3>
+
+        <p>This is the auto / on page load modal example.</p>
+
+        <p><a class="graphene--modal-open button" href="#">Open Modal</a></p>
+
+        <p><a class="button button-clear" href="./index.html">Back to the modal examples home page.</a></p>
+
+        <div id="graphene--modal" class="graphene--modal-init">
+
+            <div class="graphene--modal-content">
+                <div class="graphene--modal-content-wrapper">
+
+                    <!-- START OF CONTENT : Optional Milligram grid and css classes -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="column column-25">
+                                <img src="https://picsum.photos/200/250/?random" alt="Random image">
+                            </div>
+                            <div class="column column-offset-1">
+                                <h3>Auto loading modal</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit nisi felis, eu malesuada metus imperdiet quis. Aliquam id finibus turpis, rutrum scelerisque tortor. Praesent commodo lacinia sapien sit amet egestas.</p>
+                                <p> Vivamus convallis neque eros, id venenatis augue posuere quis. Donec dui metus, ornare in magna id, blandit sagittis dolor. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF CONTENT -->
+
+                <a class="graphene--modal-close-btn graphene--modal-close" href="#" aria-label="Close"><span class="graphene--modal-visuallyhide">Close</span></a>
+            </div>
+
+            <div id="graphene--modal-overlay" class="graphene--modal-close graphene--modal-close-btn" aria-label="Close"><span class="graphene--modal-visuallyhide">Close</span></div>
+        </div>
+
+    </div>
+    <!-- Not required for Graphene Modal -->
+    <link rel="stylesheet" href="/src/css/reset.css">
+    <link rel="stylesheet" href="/src/css/example.css">
+
+    <!-- Graphene Required files -->
+    <link rel="stylesheet" href="/src/css/graphene-modal.css">
+    <script src="/src/js/graphene-modal.js"></script>
+
+    <!-- Graphene auto / on load modal example -->
+    <script src="/src/js/auto-modal.js"></script>
+
+</body>
+
+</html>

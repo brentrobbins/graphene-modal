@@ -1,0 +1,13 @@
+/* Content wrapper just for the examples */
+
+.graphene--example-page--wrapper {
+    margin: 40px auto 0 auto;
+    max-width: 780px;
+}
+
+
+/* Ajax Form Example */
+
+#formMessage {
+    display: none;
+}
