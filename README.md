@@ -25,11 +25,13 @@ What it is not:
 - This is not a 'lightbox' used for photo galleries.
 - This is not a replacement for more feature rich modals/lightboxes.
 
-# Examples
-- [Auto Modal](./examples/auto-modal.html)
-- [Ajax Form Modal](./examples/ajax-form.html)
-- [Cookie Modal](./examples/cookie.html)
-- [Image Modal](./examples/image.html)
+# Demos
+- [Auto Modal](https://brentrobbins.github.io/graphene-modal/auto-modal.html)
+- [Ajax Form Modal](https://brentrobbins.github.io/graphene-modal/ajax-form.html)
+- [Cookie Modal](https://brentrobbins.github.io/graphene-modal/cookie.html)
+- [Image Modal](https://brentrobbins.github.io/graphene-modal/image.html)
+
+[Graphene modal demo home page](https://brentrobbins.github.io/graphene-modal/)
 
 
 Used the [Milligram CSS framework](https://milligram.io/) on these examples to just make the example pages nice looking. 
@@ -37,7 +39,7 @@ Used the [Milligram CSS framework](https://milligram.io/) on these examples to j
 # Support
 
 Currently this modal has been tested and is supported on the following browsers and devices:
-- Official list coming soon (essentiall it's IE10+)
+- Official list coming soon (essentially it's IE10+)
 
 The modal is unsupported for:
 - IE9 and older
