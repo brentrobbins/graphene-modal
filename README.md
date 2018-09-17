@@ -26,7 +26,7 @@ What it is not:
 - This is not a replacement for more feature rich modals/lightboxes.
 
 # Demos
-- [Auto Modal](https://brentrobbins.github.io/graphene-modal/auto-modal.html)
+- [Auto Modal](https://brentrobbins.github.io/graphene-modal/auto.html)
 - [Ajax Form Modal](https://brentrobbins.github.io/graphene-modal/ajax-form.html)
 - [Cookie Modal](https://brentrobbins.github.io/graphene-modal/cookie.html)
 - [Image Modal](https://brentrobbins.github.io/graphene-modal/image.html)
