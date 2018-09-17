@@ -12,7 +12,7 @@ var grapheneOverlay = document.getElementById('graphene--modal-overlay');
 // hasClass polyfill
 function hasClass(element,testClass){
   if ('classList' in element) { return element.classList.contains(testClass);
-} else { return new Regexp(testClass).exec(element.className); } // this is better
+} else { return new RegExp(testClass).exec(element.className); } // this is better
   return false;
 }
 
