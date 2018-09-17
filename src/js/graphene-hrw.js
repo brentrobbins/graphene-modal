@@ -8,10 +8,17 @@
 /* Not IE9 or older */
 if (document.all && !window.atob) {
     console.log('IE9 or older');
-    document.body.classList.add("ie9");
+    addClass( document.body, 'ie9');
 } else {
-    document.body.classList.add("Notie9");
+    addClass( document.body, 'Notie9');
 }
+
+function addClass(elem, className){
+    if(elem.className.indexOf(className) == -1) {
+        elem.className += className;
+    }          
+}
+
 
 // Setup variables (really constants, but IE10...)
 var graphene = document.getElementById('graphene--modal');
