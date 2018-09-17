@@ -42,7 +42,7 @@ if (document.all && !window.atob) {
 
 
 // Close modal function
-function grapheneModalClickOpen(el) {
+function grapheneModalClickOpen() {
   console.log('open');
   // We'll use `el` to track what triggered this close function. 
   // Used for cookies, analytics, callbacks and other functions.
@@ -123,6 +123,6 @@ document.getElementById('graphene--modal-open-btn').addEventListener('click', fu
 document.onreadystatechange = function() {
 	if (document.readyState == 'complete') {
 		// Open up the modal when the page is ready and passing `auto` to track how it was opened
-        grapheneModalClickOpen('auto');
+        grapheneModalClickOpen();
     } 
 };
