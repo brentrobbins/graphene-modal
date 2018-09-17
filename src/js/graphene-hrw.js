@@ -6,18 +6,18 @@
 */
 
 /* Not IE9 or older */
-if (document.all && !window.atob) {
-    console.log('IE9 or older');
-    addClass( document.body, 'ie9');
-} else {
-    addClass( document.body, 'Notie9');
-}
+// if (document.all && !window.atob) {
+//     console.log('IE9 or older');
+//     addClass( document.body, 'ie9');
+// } else {
+//     addClass( document.body, 'Notie9');
+// }
 
-function addClass(elem, className){
-    if(elem.className.indexOf(className) == -1) {
-        elem.className += className;
-    }          
-}
+// function addClass(elem, className){
+//     if(elem.className.indexOf(className) == -1) {
+//         elem.className += className;
+//     }          
+// }
 
 
 // Setup variables (really constants, but IE10...)
@@ -26,6 +26,7 @@ var grapheneOverlay = document.getElementById('graphene--modal-overlay');
 
 // Close modal function
 function grapheneModalClickOpen(el) {
+  console.log('open');
   // We'll use `el` to track what triggered this close function. 
   // Used for cookies, analytics, callbacks and other functions.
   graphene.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
@@ -34,6 +35,7 @@ function grapheneModalClickOpen(el) {
 
 // Open modal fuction
 function grapheneModalClickClose(el) {
+  console.log('close');
   // Use `el` to track what triggered this function. 
   // Used for cookies, analytics, callbacks and other functions.
   graphene.className = graphene.className.replace(/\bgraphene--modal-show\b/g, 'graphene--modal-hide');
