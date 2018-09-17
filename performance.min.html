@@ -2,7 +2,7 @@
 </pre></div></div><!-- END OF CONTENT --> <a class="graphene--modal-close-btn graphene--modal-close" href="#" aria-label="Close"><span class="graphene--modal-visuallyhide">Close</span></a></div><div id="graphene--modal-overlay" class="graphene--modal-close graphene--modal-close-btn" aria-label="Close"><span class="graphene--modal-visuallyhide">Close</span></div></div></div><!-- CRITICAL CSS - ALL CSS EVEN THE THEME COMBINED INTO ONE FILE --><script>(function(){var lastTime=0; var vendors=['webkit', 'moz']; for(var x=0; x < vendors.length && !window.requestAnimationFrame; ++x){window.requestAnimationFrame=window[vendors[x]+'RequestAnimationFrame']; window.cancelAnimationFrame=window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];}if (!window.requestAnimationFrame) window.requestAnimationFrame=function(callback, element){var currTime=new Date().getTime(); var timeToCall=Math.max(0, 16 - (currTime - lastTime)); var id=window.setTimeout(function(){callback(currTime + timeToCall);}, timeToCall); lastTime=currTime + timeToCall; return id;}; if (!window.cancelAnimationFrame) window.cancelAnimationFrame=function(id){clearTimeout(id);};}()); var cb=function(){var e=document.createElement("link");e.rel="stylesheet",e.href="/graphene-modal/dist/css/critical-auto-performance.css";var a=document.getElementsByTagName("head")[0];a.parentNode.insertBefore(e,a)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb)</script><!-- Graphene auto example js --><script src="/graphene-modal/dist/js/graphene-performance.min.js" defer></script>
 
 <style>
-.graphene--modal-content-wrapper {
+.graphene--modal-content {
     top: 0 !important;
     left: 0 !important;
     bottom: 0 !important;
@@ -12,7 +12,7 @@
     max-height: 200px !important;
     max-width: 200px !important;
 }
-.Modal-Background {
+#graphene-modal {
     overflow: unset !important;
     overflow-y: unset !important;
 }
