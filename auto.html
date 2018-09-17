@@ -15,11 +15,11 @@
         <h1>Graphene Modal</h1>
         <h3>A simple, lightweight modal / modal window. Built for performance.</h3>
 
-        <p>This is the ajax form modal example.</p>
+        <p>This is the auto / on page load modal example.</p>
 
-        <p><a class="button graphene--modal-open" href="#">Display form modal</a></p>
+        <p><a class="graphene--modal-open button" href="#">Open Modal</a></p>
 
-        <p><a class="button button-clear" href="./index.html">Back to the modal examples home page.</a></p>
+        <p><a class="button button-clear" href="/index.html">Back to the modal examples home page.</a></p>
 
         <div id="graphene--modal" class="graphene--modal-init">
 
@@ -28,18 +28,16 @@
 
                     <!-- START OF CONTENT : Optional Milligram grid and css classes -->
                     <div class="container">
-                        <form method="POST" onSubmit="ajaxForm();return false;">
-                            <fieldset>
-                                <label for="title">Title</label>
-                                <input type="text" placeholder="Add your post title" id="title" name="title" required>
-                                <label for="body">Body</label>
-                                <textarea placeholder="Your post body…" id="body" name="body" required></textarea>
-                                <input class="button-primary" type="submit" value="Send" name="submit">
-                            </fieldset>
-                        </form>
-                        <!-- Option: Used to display the API's response after submitting the form -->
-                        <pre class="code" id="formMessage">
-                        </pre>
+                        <div class="row">
+                            <div class="column column-25">
+                                <img src="https://picsum.photos/200/250/?random" alt="Random image">
+                            </div>
+                            <div class="column column-offset-1">
+                                <h3>Auto loading modal</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit nisi felis, eu malesuada metus imperdiet quis. Aliquam id finibus turpis, rutrum scelerisque tortor. Praesent commodo lacinia sapien sit amet egestas.</p>
+                                <p> Vivamus convallis neque eros, id venenatis augue posuere quis. Donec dui metus, ornare in magna id, blandit sagittis dolor. </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- END OF CONTENT -->
@@ -59,8 +57,8 @@
     <link rel="stylesheet" href="/src/css/graphene-modal.css">
     <script src="/src/js/graphene-modal.js"></script>
 
-    <!-- Graphene ajax form example -->
-    <script src="/src/js/ajax-example.js"></script>
+    <!-- Graphene auto / on load modal example -->
+    <script src="/src/js/auto-modal.js"></script>
 
 </body>
 

@@ -15,19 +15,22 @@
         <h1>Graphene Modal</h1>
         <h3>A simple, lightweight modal / modal window. Built for performance.</h3>
 
-        <p>This is the image modal example.</p>
+        <p>This is the cookie modal example.</p>
 
-        <p><a class="button graphene--modal-open" href="#">Display image modal</a></p>
+        <p><a class="button graphene--modal-open" href="#">Display modal</a></p>
 
-        <p><a class="button button-clear" href="./index.html">Back to the modal examples home page.</a></p>
+        <p><a class="button button-clear" href="/index.html">Back to the modal examples home page.</a></p>
 
         <div id="graphene--modal" class="graphene--modal-init">
 
             <!-- NOTE: There is an `image` class added to this modal for 'special' formatting -->
-            <div class="graphene--modal-content image">
+            <div class="graphene--modal-content">
                 <div class="graphene--modal-content-wrapper">
 
-                    <img src="https://picsum.photos/800/650/?random" alt="Random image">
+                    <h3>Cookie Demo</h3>
+                    <!-- Option: Used to display the the Cookie Demo info -->
+                    <pre class="code" id="formMessage">
+                    </pre>
 
                 </div>
                 <!-- END OF CONTENT -->
@@ -46,6 +49,12 @@
     <!-- Graphene Required files -->
     <link rel="stylesheet" href="/src/css/graphene-modal.css">
     <script src="/src/js/graphene-modal.js"></script>
+
+    <!-- Graphene cookie js require for cookie functionality -->
+    <script src="/src/js/cookie.js"></script>
+
+    <!-- Not required for Graphene Modal Cookies, just used for this example to demo cookies-->
+    <script src="/src/js/cookie-example.js"></script>
 
 </body>
 
