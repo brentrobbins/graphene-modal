@@ -47,13 +47,13 @@ function grapheneModalClickOpen(el) {
   // We'll use `el` to track what triggered this close function. 
   // Used for cookies, analytics, callbacks and other functions.
 
-  removeClass(graphene, 'graphene--modal-init');
-  removeClass(grapheneOverlay, 'graphene--modal-init');
-  addClass(graphene, 'graphene--modal-show');
-  addClass(grapheneOverlay, 'graphene--modal-show');
+  // removeClass(graphene, 'graphene--modal-init');
+  // removeClass(grapheneOverlay, 'graphene--modal-init');
+  // addClass(graphene, 'graphene--modal-show');
+  // addClass(grapheneOverlay, 'graphene--modal-show');
 
-  // graphene.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
-  // grapheneOverlay.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
+  graphene.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
+  grapheneOverlay.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
 
 }
 
