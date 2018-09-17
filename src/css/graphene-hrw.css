@@ -151,11 +151,17 @@ body.notIE9 .graphene--modal-content{
     -webkit-animation: graphene--modal-fadeOut 366ms;
     animation: graphene--modal-fadeOut 366ms;
 }
+body.IE9 .graphene--modal-hide {
+    display: none;
+} 
 
 .graphene--modal-show {
     -webkit-animation: graphene--modal-fadeIn 366ms;
     animation: graphene--modal-fadeIn 366ms;
 }
+body.IE9 .graphene--modal-show {
+    display: block;
+} 
 
 .graphene--modal-visuallyhide {
     position: absolute;

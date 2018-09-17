@@ -5,6 +5,10 @@
 |--------------------------------------------------
 */
 
+
+
+
+
 // Setup variables (really constants, but IE10...)
 var graphene = document.getElementById('graphene--modal');
 var grapheneOverlay = document.getElementById('graphene--modal-overlay');
@@ -32,40 +36,36 @@ function addClass(elem, className){
 /* Not IE9 or older */
 if (document.all && !window.atob) {
     console.log('IE9 or older');
-    addClass( document.body, 'ie9');
+    addClass( document.body, 'IE9');
 } else {
     addClass( document.body, 'notIE9');
 }
 
 
 
-
-
 // Close modal function
 function grapheneModalClickOpen() {
-  console.log('open');
+  console.log('open ' + graphene.className);
   // We'll use `el` to track what triggered this close function. 
   // Used for cookies, analytics, callbacks and other functions.
 
-  // removeClass(graphene, 'graphene--modal-init');
-  // removeClass(grapheneOverlay, 'graphene--modal-init');
-  // addClass(graphene, 'graphene--modal-show');
-  // addClass(grapheneOverlay, 'graphene--modal-show');
+  removeClass(graphene, 'graphene--modal-init');
+  removeClass(grapheneOverlay, 'graphene--modal-init');
+  addClass(graphene, 'graphene--modal-show');
+  addClass(grapheneOverlay, 'graphene--modal-show');
 
-  graphene.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
-  grapheneOverlay.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
-
+  console.log('opened ' + graphene.className);
 }
 
 // Open modal fuction
-function grapheneModalClickClose(el) {
-  console.log('close');
+function grapheneModalClickClose() {
+  console.log('close: ' + graphene.className);
   // Use `el` to track what triggered this function. 
   // Used for cookies, analytics, callbacks and other functions.
   removeClass(graphene, 'graphene--modal-show');
   addClass(graphene, 'graphene--modal-hide');
 
-  //graphene.className = graphene.className.replace(/\bgraphene--modal-show\b/g, 'graphene--modal-hide');
+  console.log('closed: ' + graphene.className);
 
   graphene.addEventListener("webkitAnimationEnd", grapheneCleanUp,false);
   graphene.addEventListener("animationend", grapheneCleanUp,false);
@@ -74,10 +74,13 @@ function grapheneModalClickClose(el) {
 
 // Cleanup function to remove the hide class and reset it to the initial class
 function grapheneCleanUp() {
-  //removeClass(graphene, 'graphene--modal-hide');
-  //addClass(graphene, 'graphene--modal-init');
+  console.log('clean up: ' + graphene.className);
+  removeClass(graphene, 'graphene--modal-hide');
+  addClass(graphene, 'graphene--modal-init');
 
-  graphene.className = graphene.className.replace(/\bgraphene--modal-hide\b/g, 'graphene--modal-init');
+  //graphene.className = graphene.className.replace(/\bgraphene--modal-hide\b/g, 'graphene--modal-init');
+
+  console.log('cleaned up: ' + graphene.className);
 }
 
 // Click `esc` key to close
@@ -90,28 +93,28 @@ document.onkeydown = function(evt) {
 };
 
 // Fire the Open fucntion when the `graphene--modal-open` class is clicked
-var classname = document.getElementsByClassName("graphene--modal-open");
-  for(i=0;i<classname.length;i++){
-    classname[i].addEventListener('click', function(e) {
-      // Open modal - pass along the text used in the element to track where it was triggered
-      grapheneModalClickOpen(this.innerHTML);
-    });
-}
+// var classname = document.getElementsByClassName("graphene--modal-open");
+//   for(i=0;i<classname.length;i++){
+//     classname[i].addEventListener('click', function(e) {
+//       // Open modal - pass along the text used in the element to track where it was triggered
+//       grapheneModalClickOpen(this.innerHTML);
+//     });
+// }
 
 // Fire the Close fucntion when the `graphene--modal-close` class is clicked
-var classname = document.getElementsByClassName("graphene--modal-close");
-  for(i=0;i<classname.length;i++){
-    classname[i].addEventListener('click', function() {
-      // Open modal - pass along the text used in the element to track where it was triggered
-      grapheneModalClickClose(this.innerHTML);
-    });
-}
+// var classname = document.getElementsByClassName("graphene--modal-close");
+//   for(i=0;i<classname.length;i++){
+//     classname[i].addEventListener('click', function() {
+//       // Open modal - pass along the text used in the element to track where it was triggered
+//       grapheneModalClickClose(this.innerHTML);
+//     });
+// }
 
 
 
-// document.getElementById('graphene--modal-overlay').addEventListener('click', function() {
-//     grapheneModalClickClose();
-// })
+document.getElementById('graphene--modal-overlay').addEventListener('click', function() {
+    grapheneModalClickClose();
+})
 document.getElementById('graphene--modal-close-btn').addEventListener('click', function() {
     grapheneModalClickClose();
 })
