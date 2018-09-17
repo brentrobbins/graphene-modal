@@ -33,7 +33,7 @@ if (document.all && !window.atob) {
     console.log('IE9 or older');
     addClass( document.body, 'ie9');
 } else {
-    addClass( document.body, 'Notie9');
+    addClass( document.body, 'notIE9');
 }
 
 

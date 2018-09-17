@@ -39,7 +39,7 @@
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
     z-index: 3;
 }
-body.Notie9 .graphene--modal-content{
+body.notIE9 .graphene--modal-content{
     left: 50%;
     top: 50%;
     bottom: unset;
@@ -83,10 +83,10 @@ body.Notie9 .graphene--modal-content{
         width: 594px;
         height: 424px;
     }
-    body.Notie9 .graphene--modal-content {
+    body.notIE9 .graphene--modal-content {
         width: 594px;
     }
-    body.Notie9 .graphene--modal-content.image .graphene--modal-content-wrapper img {
+    body.notIE9 .graphene--modal-content.image .graphene--modal-content-wrapper img {
         width: 594px;
         height: 424px;
     }
