@@ -18,13 +18,14 @@ function hasClass(element,testClass){
 
 function removeClass(elem, name) {
     if (hasClass(elem, name)) {
-       elem.className=elem.className.replace(new RegExp('(\\s|^)'+name+'(\\s|$)'),' ').replace(/^\s+|\s+$/g, '');
+       elem.className=elem.className.replace(new RegExp('(\\s|^)'+name+'(\\s|$)'),'').replace(/^\s+|\s+$/g, '');
+       //elem.className=elem.className.replace('/\b' +name+ '\b/g', '');
      }
  }
 
 function addClass(elem, className){
     if(elem.className.indexOf(className) == -1) {
-        elem.className += className;
+        elem.className += ' ' + className;
     }          
 }
 
@@ -47,8 +48,8 @@ function grapheneModalClickOpen(el) {
   // Used for cookies, analytics, callbacks and other functions.
 
   removeClass(graphene, 'graphene--modal-init');
-  addClass(graphene, 'graphene--modal-show');
   removeClass(grapheneOverlay, 'graphene--modal-init');
+  addClass(graphene, 'graphene--modal-show');
   addClass(grapheneOverlay, 'graphene--modal-show');
 
   // graphene.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
@@ -73,10 +74,10 @@ function grapheneModalClickClose(el) {
 
 // Cleanup function to remove the hide class and reset it to the initial class
 function grapheneCleanUp() {
-  removeClass(graphene, 'graphene--modal-hide');
-  addClass(graphene, 'graphene--modal-init');
+  //removeClass(graphene, 'graphene--modal-hide');
+  //addClass(graphene, 'graphene--modal-init');
 
-  //graphene.className = graphene.className.replace(/\bgraphene--modal-hide\b/g, 'graphene--modal-init');
+  graphene.className = graphene.className.replace(/\bgraphene--modal-hide\b/g, 'graphene--modal-init');
 }
 
 // Click `esc` key to close
@@ -113,6 +114,9 @@ var classname = document.getElementsByClassName("graphene--modal-close");
 // })
 document.getElementById('graphene--modal-close-btn').addEventListener('click', function() {
     grapheneModalClickClose();
+})
+document.getElementById('graphene--modal-open-btn').addEventListener('click', function() {
+  grapheneModalClickOpen('click');
 })
 
 // Document ready

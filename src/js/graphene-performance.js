@@ -57,4 +57,4 @@ var classname = document.getElementsByClassName("graphene--modal-close");
       // Open modal - pass along the text used in the element to track where it was triggered
       grapheneModalClickClose(this.innerHTML);
     });
-}
+}r

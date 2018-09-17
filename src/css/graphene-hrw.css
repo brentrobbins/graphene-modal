@@ -105,7 +105,7 @@ body.notIE9 .graphene--modal-content{
     z-index: 4;
 }
 
-.graphene--modal-close-btn {
+#graphene--modal-close-btn {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -126,7 +126,7 @@ body.notIE9 .graphene--modal-content{
     text-decoration: none;
 }
 
-.graphene--modal-close-btn:before {
+#graphene--modal-close-btn:before {
     position: absolute;
     top: 0;
     right: 0;
