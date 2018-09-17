@@ -5,19 +5,27 @@
 |--------------------------------------------------
 */
 
-/* Not IE9 or older */
-// if (document.all && !window.atob) {
-//     console.log('IE9 or older');
-//     addClass( document.body, 'ie9');
-// } else {
-//     addClass( document.body, 'Notie9');
-// }
+function removeClass(elem, name) {
+    if (hasClass(elem, name)) {
+       elem.className=elem.className.replace(new RegExp('(\\s|^)'+name+'(\\s|$)'),' ').replace(/^\s+|\s+$/g, '');
+     }
+ }
 
-// function addClass(elem, className){
-//     if(elem.className.indexOf(className) == -1) {
-//         elem.className += className;
-//     }          
-// }
+function addClass(elem, className){
+    if(elem.className.indexOf(className) == -1) {
+        elem.className += className;
+    }          
+}
+
+/* Not IE9 or older */
+if (document.all && !window.atob) {
+    console.log('IE9 or older');
+    addClass( document.body, 'ie9');
+} else {
+    addClass( document.body, 'Notie9');
+}
+
+
 
 
 // Setup variables (really constants, but IE10...)
@@ -29,8 +37,15 @@ function grapheneModalClickOpen(el) {
   console.log('open');
   // We'll use `el` to track what triggered this close function. 
   // Used for cookies, analytics, callbacks and other functions.
-  graphene.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
-  grapheneOverlay.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
+
+  removeClass(graphene, 'graphene--modal-init');
+  addClass(graphene, 'graphene--modal-show');
+  removeClass(grapheneOverlay, 'graphene--modal-init');
+  addClass(grapheneOverlay, 'graphene--modal-show');
+
+  // graphene.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
+  // grapheneOverlay.className = graphene.className.replace(/\bgraphene--modal-init\b/g, 'graphene--modal-show');
+
 }
 
 // Open modal fuction
@@ -38,7 +53,11 @@ function grapheneModalClickClose(el) {
   console.log('close');
   // Use `el` to track what triggered this function. 
   // Used for cookies, analytics, callbacks and other functions.
-  graphene.className = graphene.className.replace(/\bgraphene--modal-show\b/g, 'graphene--modal-hide');
+  removeClass(graphene, 'graphene--modal-show');
+  addClass(graphene, 'graphene--modal-hide');
+
+  //graphene.className = graphene.className.replace(/\bgraphene--modal-show\b/g, 'graphene--modal-hide');
+
   graphene.addEventListener("webkitAnimationEnd", grapheneCleanUp,false);
   graphene.addEventListener("animationend", grapheneCleanUp,false);
   graphene.addEventListener("onanimationend", grapheneCleanUp,false);
@@ -46,7 +65,10 @@ function grapheneModalClickClose(el) {
 
 // Cleanup function to remove the hide class and reset it to the initial class
 function grapheneCleanUp() {
-  graphene.className = graphene.className.replace(/\bgraphene--modal-hide\b/g, 'graphene--modal-init');
+  removeClass(graphene, 'graphene--modal-hide');
+  addClass(graphene, 'graphene--modal-init');
+
+  //graphene.className = graphene.className.replace(/\bgraphene--modal-hide\b/g, 'graphene--modal-init');
 }
 
 // Click `esc` key to close
@@ -84,3 +106,9 @@ document.onreadystatechange = function() {
     } 
 };
 
+document.getElementById('graphene--modal-overlay').addEventListener('click', function() {
+    grapheneModalClickClose();
+})
+document.getElementById('graphene--modal-close-btn').addEventListener('click', function() {
+    grapheneModalClickClose();
+})
