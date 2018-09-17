@@ -5,6 +5,17 @@
 |--------------------------------------------------
 */
 
+// Setup variables (really constants, but IE10...)
+var graphene = document.getElementById('graphene--modal');
+var grapheneOverlay = document.getElementById('graphene--modal-overlay');
+
+// hasClass polyfill
+function hasClass(element,testClass){
+  if ('classList' in element) { return element.classList.contains(testClass);
+} else { return new Regexp(testClass).exec(element.className); } // this is better
+  return false;
+}
+
 function removeClass(elem, name) {
     if (hasClass(elem, name)) {
        elem.className=elem.className.replace(new RegExp('(\\s|^)'+name+'(\\s|$)'),' ').replace(/^\s+|\s+$/g, '');
@@ -28,9 +39,6 @@ if (document.all && !window.atob) {
 
 
 
-// Setup variables (really constants, but IE10...)
-var graphene = document.getElementById('graphene--modal');
-var grapheneOverlay = document.getElementById('graphene--modal-overlay');
 
 // Close modal function
 function grapheneModalClickOpen(el) {
@@ -98,6 +106,15 @@ var classname = document.getElementsByClassName("graphene--modal-close");
     });
 }
 
+
+
+// document.getElementById('graphene--modal-overlay').addEventListener('click', function() {
+//     grapheneModalClickClose();
+// })
+document.getElementById('graphene--modal-close-btn').addEventListener('click', function() {
+    grapheneModalClickClose();
+})
+
 // Document ready
 document.onreadystatechange = function() {
 	if (document.readyState == 'complete') {
@@ -105,10 +122,3 @@ document.onreadystatechange = function() {
         grapheneModalClickOpen('auto');
     } 
 };
-
-document.getElementById('graphene--modal-overlay').addEventListener('click', function() {
-    grapheneModalClickClose();
-})
-document.getElementById('graphene--modal-close-btn').addEventListener('click', function() {
-    grapheneModalClickClose();
-})
