@@ -89,6 +89,11 @@ document.getElementById('graphene--modal-open-btn').addEventListener('click', fu
   grapheneModalClickOpen();
 })
 
+document.getElementById('graphene--modal-action').addEventListener('click', function() {
+  grapheneModalCookiesLastAction('modal action button');
+})
+
+
 document.onreadystatechange = function() {
 	if (document.readyState == 'complete') {
         grapheneModalClickOpen();
