@@ -1,14 +1,4 @@
-// Fire the Cookie fucntion when the `graphene--modal-open` class is clicked
-// var classname = document.getElementsByClassName("graphene--modal-open");
-//   for(i=0;i<classname.length;i++){
-//     classname[i].addEventListener('click', function(e) {
-//       // Trigger the cookie funcation when the open modal link/button has been fired
-// 	  grapheneModalCookies();
-// 	});
-// }
 
-// Cookie function: Simple example of showing how many times you have seen the cookie modal
-// This function is storing the count and retrieving it and displaying it in the modal
 function grapheneModalCookiesCount() {
 	var cookieVal = docCookies.getItem('graphene-modal-seen');
 	var cookieStatus;
@@ -21,19 +11,25 @@ function grapheneModalCookiesCount() {
 		docCookies.setItem( 'graphene-modal-seen', cookieStatus, new Date(2020, 5, 12) );
 	}
 		document.getElementById('Message').style.display = 'block';
-		document.getElementById('Message').innerHTML = '<code><strong>Times you have seen this modal:</strong> <br />' + cookieStatus + '</code>';
+		document.getElementById('Message').innerHTML = '<code><strong>Times you have seen this modal: </strong> <br />' + cookieStatus + '</code>';
 }
+function grapheneModalCookiesLastAction() {
+    var cookieActionVal = docCookies.getItem('graphene-modal-last-action');
+  
+    if (arguments[0] != null || arguments[0] != undefined) {
 
+        var cookieAction = arguments[0];
+        console.log('cookie action ' + cookieAction);
+        
+        var cookieStatus = docCookies.setItem( 'graphene-modal-last-action', cookieAction, new Date(2020, 5, 12) );
 
-// document.getElementById('graphene--modal-action').addEventListener('click', function() {
-//     grapheneModalClickClose('action');
-//   });
-//   document.getElementById('graphene--modal-overlay').addEventListener('click', function() {
-//       grapheneModalClickClose('overlay');
-//   });
-//   document.getElementById('graphene--modal-close-btn').addEventListener('click', function() {
-//       grapheneModalClickClose('button');
-//   });
-//   document.getElementById('graphene--modal-open-btn').addEventListener('click', function() {
-//     grapheneModalClickOpen('link');
-//   });
+        document.getElementById('Message2').style.display = 'block';
+        document.getElementById('Message2').innerHTML = '<code><strong>The modal was last closed by the: </strong> <br />' + cookieAction + '</code>';
+
+    } else if (cookieActionVal != null || cookieActionVal != undefined) {
+
+        document.getElementById('Message2').style.display = 'block';
+        document.getElementById('Message2').innerHTML = '<code><strong>The modal was last closed by the: </strong> <br />' + cookieActionVal + '</code>';
+
+    }
+}

@@ -213,3 +213,6 @@ body.IE9 .graphene--modal-show {
         display: none;
     }
 }
+.code {
+    display: none;
+}
