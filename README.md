@@ -1,6 +1,6 @@
 # Graphene Modal 
 
-The goal for the Graphene Modal is to use 'old school' vanilla javascript. Graphene Modal is completely functional without any 3rd party JS libraries (like jQuery) or polyfills. The reason for this is to function on a wide range of browsers (as old as IE10) and be highly performant (since there are no dependencies). Sadly this means no 'modern' native browser javascript functions like the addEventListener or not even utilizing `data` attributes.
+The goal for the Graphene Modal is to use 'old school' vanilla javascript. Graphene Modal is completely functional without any 3rd party JS libraries (like jQuery) or polyfills. The reason for this is to function on a wide range of browsers (as old as IE10) and be highly performant (since there are no dependencies).
 
 If you are already loading jQuery this might not be the ideal modal. If you are building a site to keep your Javascript footprint as small as possible (for optimal performance), then you should consider this for your modals.
 
